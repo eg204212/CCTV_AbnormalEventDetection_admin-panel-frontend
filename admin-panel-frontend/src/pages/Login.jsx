@@ -1,30 +1,40 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+<<<<<<< HEAD
 import { adminEmails } from '../config/adminEmails';
 import axios from '../config/axios';
+=======
+>>>>>>> f8c4a87f52c3fe8a95a2f15d4fd4c223c415ec39
 
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+<<<<<<< HEAD
   const [showForgotModal, setShowForgotModal] = useState(false);
   const [email, setEmail] = useState('');
   const [otpSent, setOtpSent] = useState(false);
   const [otp, setOtp] = useState('');
   const [otpError, setOtpError] = useState('');
+=======
+>>>>>>> f8c4a87f52c3fe8a95a2f15d4fd4c223c415ec39
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
     if (username === 'admin' && password === 'admin') {
+<<<<<<< HEAD
       // Save authentication state
       localStorage.setItem('isAuthenticated', 'true');
       localStorage.setItem('userEmail', 'admin@system.com');
+=======
+>>>>>>> f8c4a87f52c3fe8a95a2f15d4fd4c223c415ec39
       navigate('/dashboard');
     } else {
       alert('Invalid credentials');
     }
   };
 
+<<<<<<< HEAD
   const handleSendOtp = async () => {
     if (!adminEmails.includes(email)) {
       setOtpError('Email not allowed');
@@ -60,6 +70,8 @@ function Login() {
     }
   };
 
+=======
+>>>>>>> f8c4a87f52c3fe8a95a2f15d4fd4c223c415ec39
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
       <form onSubmit={handleLogin} className="bg-white p-8 rounded-lg shadow-md w-96">
@@ -70,11 +82,15 @@ function Login() {
           className="w-full mb-4 px-4 py-2 border rounded"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+<<<<<<< HEAD
           required
+=======
+>>>>>>> f8c4a87f52c3fe8a95a2f15d4fd4c223c415ec39
         />
         <input
           type="password"
           placeholder="Password"
+<<<<<<< HEAD
           className="w-full mb-2 px-4 py-2 border rounded"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -149,6 +165,16 @@ function Login() {
           </div>
         </div>
       )}
+=======
+          className="w-full mb-6 px-4 py-2 border rounded"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+          Login
+        </button>
+      </form>
+>>>>>>> f8c4a87f52c3fe8a95a2f15d4fd4c223c415ec39
     </div>
   );
 }
